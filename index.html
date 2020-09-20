@@ -5,8 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hogwarts School of Witchcraft and Wizardry student list</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
   <body>
+    <header>
+      <div class="header_table">
+        <h1>Hogwarts School of Witchcraft and Wizardry</h1>
+      </div>
+    </header>
+
+    <main>
+      <div id="student_list">
+
+        <section id="detail" class="hide">
+          <article class="popup_box" data-theme="">
+            <div class="popup_headings">   
+            <h4>First name</h4>
+            <h4>Last name</h4>
+            <h4>House</h4>
+            <h4>Prefect status</h4>
+            <h4>Blood status</h4>
+            <h4>Inquisitorial Squad</h4>
+            <h4>Picture</h4>
+            <button class="close">X</button>
+            </div>
+            <div class="popup_table">
+            <div class="first_name">NAME</div>
+            <div class="last_name">LAST NAME</div>
+            <div class="house">HOUSE</div>
+            <div class="prefect">PREFECT</div>
+            <div class="blood_status">BLOOD STATUS</div>
+            <div class="inq-squad">Inquisitorial Squad</div>
+            <img class="image" src="">
+         
+            <button class="expel">Expel</button>
+            <button class="prefect_button">Make prefect</button>
+            <button class="squad_button">Add to Inquisitorial Squad</button>
+          </div>
+          </article>
+        </section>
+
+        <div class="student_th">
+          <h2>Student list</h2>
+          <h3 class="filter_heading">Filters:</h3>
+
+          <select name="select filter" id="filter">
+            <option value="default">Select house</option>
+            <optgroup label="Houses">
+              <option value="gryffindor">Gryffindor</option>
+              <option value="hufflepuff">Hufflepuff</option>
+              <option value="ravenclaw">Ravenclaw</option>
+              <option value="slytherin">Slytherin</option>
+            </optgroup>
+
+            <optgroup label="Other filters">
+              <option value="expelled">Expelled students</option>
+              <option value="inq-squad">Inquisitorial squad</option>
+              <option value="prefects">Prefects</option>
+
+            </optgroup>
+          </select>
+          <h3 class="filter_heading">Sort by:</h3>
+          <select name="select sort" id="sorting">
+            <option value="default">Sort by</option>
+              <option value="firstname">First Name</option>
+              <option value="lastname">Last Name</option>
+              <option value="house">House</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="student_table_sorting"></div>
+        <table id="student_table_content">
+          <tbody></tbody>
+        </table>
+
+        <template id="student">
+          <tr class="tr_student">
+            <td data-field="first_name">NAME</td>
+            <td data-field="last_name">LAST NAME</td>
+            <td data-field="house">HOUSE</td>
+          </tr>
+        </template>
+      </div>
+
+      
+
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
